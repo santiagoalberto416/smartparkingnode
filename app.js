@@ -8,17 +8,8 @@ var express = require('express'),
   
   var connected = false;
   
-  // host
-  // http://mysql.webrahost.com/
-  
-  // name 
-  // db_u1403
-  
-  // password
-  // BNmXfvwHd
-  
   var con = mysql.createConnection({
-    host: "http://mysql.webrahost.com",
+    host: "5.79.67.193",
     user: "db_u1403",
     password: "BNmXfvwHd",
     database: "parking"
@@ -69,19 +60,27 @@ function conect(){
    });
 }
 
-// function insert(id, state) {
-//     if(connected){
-//         var sql = "INSERT INTO `activity`(`id`, `id_space`, `state`, `date`) VALUES (null,"+ id +",'"+ state +"',NOW())";
-//           con.query(sql, function (err, result) {
-//           if (err) throw err;
-//           console.log("1 record inserted");
-//         });
-//     }else{
-//         conect()
-//         console.log("trying to reconect to database");
-//     }
+function insert(id, state) {
+    if(connected){
+          var numState = 0;
+          if(state == "free"){
+            numState = 1;
+          } else if (state == "ocupated"){
+            numState = 2;
+          }else{
+            return;
+          }
+          var sql = "INSERT INTO `sensor_activities`(`id`, `sensor_id`, `state`, `created_at`, `updated_at`) VALUES (null,"+ id +",'"+ state +"',NOW(), NOW())";
+          con.query(sql, function (err, result) {
+          if (err) throw err;
+          console.log("1 record inserted");
+        });
+    }else{
+        conect();
+        console.log("trying to reconect to database");
+    }
     
-// }
+}
 
 
 
