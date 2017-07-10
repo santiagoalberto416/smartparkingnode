@@ -4,18 +4,18 @@ var express = require('express'),
 	io = require('socket.io').listen(server),
 	nicknames = {};
 
-var mysql = require('mysql');
+// var mysql = require('mysql');
 
-var connected = false;
+// var connected = false;
 
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "testInsert"
-});
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "",
+//   database: "testInsert"
+// });
 
-conect();
+// conect();
 	
 	//server.listen(process.env.PORT, process.env.IP);
 	server.listen(8081, function(){
@@ -43,7 +43,7 @@ io.on('connection', function(socket){
   socket.on('onReceiveChange', function(msg){
     console.log('message: ' + msg);
     var response = JSON.parse(msg);
-    insert(response.id, response.state);
+    // insert(response.id, response.state);
     io.emit('sendChangeToDash', msg);
   });
 });
@@ -60,19 +60,19 @@ function conect(){
    });
 }
 
-function insert(id, state) {
-    if(connected){
-        var sql = "INSERT INTO `activity`(`id`, `id_space`, `state`, `date`) VALUES (null,"+ id +",'"+ state +"',NOW())";
-          con.query(sql, function (err, result) {
-          if (err) throw err;
-          console.log("1 record inserted");
-        });
-    }else{
-        conect()
-        console.log("trying to reconect to database");
-    }
+// function insert(id, state) {
+//     if(connected){
+//         var sql = "INSERT INTO `activity`(`id`, `id_space`, `state`, `date`) VALUES (null,"+ id +",'"+ state +"',NOW())";
+//           con.query(sql, function (err, result) {
+//           if (err) throw err;
+//           console.log("1 record inserted");
+//         });
+//     }else{
+//         conect()
+//         console.log("trying to reconect to database");
+//     }
     
-}
+// }
 
 
 
