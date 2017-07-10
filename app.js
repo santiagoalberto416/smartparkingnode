@@ -4,18 +4,27 @@ var express = require('express'),
 	io = require('socket.io').listen(server),
 	nicknames = {};
 
-// var mysql = require('mysql');
-
-// var connected = false;
-
-// var con = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "",
-//   database: "testInsert"
-// });
-
-// conect();
+  var mysql = require('mysql');
+  
+  var connected = false;
+  
+  // host
+  // http://mysql.webrahost.com/
+  
+  // name 
+  // db_u1403
+  
+  // password
+  // BNmXfvwHd
+  
+  var con = mysql.createConnection({
+    host: "http://mysql.webrahost.com",
+    user: "db_u1403",
+    password: "BNmXfvwHd",
+    database: "parking"
+  });
+  
+  conect();
 	
 	//server.listen(process.env.PORT, process.env.IP);
 	server.listen(8081, function(){
