@@ -1,0 +1,60 @@
+[12-Jan-2017 19:52:34 UTC] PHP Warning:  fopen(user-images/): failed to open stream: Is a directory in /home/ubuntu/workspace/Android-appis/upload_image.php on line 10
+[12-Jan-2017 19:52:34 UTC] PHP Stack trace:
+[12-Jan-2017 19:52:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 19:52:34 UTC] PHP   2. fopen() /home/ubuntu/workspace/Android-appis/upload_image.php:10
+[12-Jan-2017 19:52:34 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/Android-appis/upload_image.php on line 12
+[12-Jan-2017 19:52:34 UTC] PHP Stack trace:
+[12-Jan-2017 19:52:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 19:52:34 UTC] PHP   2. fwrite() /home/ubuntu/workspace/Android-appis/upload_image.php:12
+[12-Jan-2017 19:52:34 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/Android-appis/upload_image.php on line 13
+[12-Jan-2017 19:52:34 UTC] PHP Stack trace:
+[12-Jan-2017 19:52:34 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 19:52:34 UTC] PHP   2. fclose() /home/ubuntu/workspace/Android-appis/upload_image.php:13
+[12-Jan-2017 20:09:04 UTC] PHP Warning:  fopen(user-images/): failed to open stream: Is a directory in /home/ubuntu/workspace/Android-appis/upload_image.php on line 10
+[12-Jan-2017 20:09:04 UTC] PHP Stack trace:
+[12-Jan-2017 20:09:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 20:09:04 UTC] PHP   2. fopen() /home/ubuntu/workspace/Android-appis/upload_image.php:10
+[12-Jan-2017 20:09:04 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/Android-appis/upload_image.php on line 12
+[12-Jan-2017 20:09:04 UTC] PHP Stack trace:
+[12-Jan-2017 20:09:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 20:09:04 UTC] PHP   2. fwrite() /home/ubuntu/workspace/Android-appis/upload_image.php:12
+[12-Jan-2017 20:09:04 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/Android-appis/upload_image.php on line 13
+[12-Jan-2017 20:09:04 UTC] PHP Stack trace:
+[12-Jan-2017 20:09:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 20:09:04 UTC] PHP   2. fclose() /home/ubuntu/workspace/Android-appis/upload_image.php:13
+[12-Jan-2017 21:11:48 UTC] PHP Warning:  fopen(user-images/FB_IMG_1483976255695.jpg): failed to open stream: No such file or directory in /home/ubuntu/workspace/Android-appis/upload_image.php on line 11
+[12-Jan-2017 21:11:48 UTC] PHP Stack trace:
+[12-Jan-2017 21:11:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 21:11:48 UTC] PHP   2. fopen() /home/ubuntu/workspace/Android-appis/upload_image.php:11
+[12-Jan-2017 21:11:48 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/Android-appis/upload_image.php on line 13
+[12-Jan-2017 21:11:48 UTC] PHP Stack trace:
+[12-Jan-2017 21:11:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 21:11:48 UTC] PHP   2. fwrite() /home/ubuntu/workspace/Android-appis/upload_image.php:13
+[12-Jan-2017 21:11:48 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/Android-appis/upload_image.php on line 14
+[12-Jan-2017 21:11:48 UTC] PHP Stack trace:
+[12-Jan-2017 21:11:48 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 21:11:48 UTC] PHP   2. fclose() /home/ubuntu/workspace/Android-appis/upload_image.php:14
+[12-Jan-2017 21:11:59 UTC] PHP Warning:  fopen(user-images/FB_IMG_1483753154875.jpg): failed to open stream: No such file or directory in /home/ubuntu/workspace/Android-appis/upload_image.php on line 11
+[12-Jan-2017 21:11:59 UTC] PHP Stack trace:
+[12-Jan-2017 21:11:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 21:11:59 UTC] PHP   2. fopen() /home/ubuntu/workspace/Android-appis/upload_image.php:11
+[12-Jan-2017 21:11:59 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/Android-appis/upload_image.php on line 13
+[12-Jan-2017 21:11:59 UTC] PHP Stack trace:
+[12-Jan-2017 21:11:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 21:11:59 UTC] PHP   2. fwrite() /home/ubuntu/workspace/Android-appis/upload_image.php:13
+[12-Jan-2017 21:11:59 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/Android-appis/upload_image.php on line 14
+[12-Jan-2017 21:11:59 UTC] PHP Stack trace:
+[12-Jan-2017 21:11:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 21:11:59 UTC] PHP   2. fclose() /home/ubuntu/workspace/Android-appis/upload_image.php:14
+[12-Jan-2017 21:13:04 UTC] PHP Warning:  fopen(user-images/FB_IMG_1483976255695.jpg): failed to open stream: No such file or directory in /home/ubuntu/workspace/Android-appis/upload_image.php on line 11
+[12-Jan-2017 21:13:04 UTC] PHP Stack trace:
+[12-Jan-2017 21:13:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 21:13:04 UTC] PHP   2. fopen() /home/ubuntu/workspace/Android-appis/upload_image.php:11
+[12-Jan-2017 21:13:04 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/Android-appis/upload_image.php on line 13
+[12-Jan-2017 21:13:04 UTC] PHP Stack trace:
+[12-Jan-2017 21:13:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 21:13:04 UTC] PHP   2. fwrite() /home/ubuntu/workspace/Android-appis/upload_image.php:13
+[12-Jan-2017 21:13:04 UTC] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/ubuntu/workspace/Android-appis/upload_image.php on line 14
+[12-Jan-2017 21:13:04 UTC] PHP Stack trace:
+[12-Jan-2017 21:13:04 UTC] PHP   1. {main}() /home/ubuntu/workspace/Android-appis/upload_image.php:0
+[12-Jan-2017 21:13:04 UTC] PHP   2. fclose() /home/ubuntu/workspace/Android-appis/upload_image.php:14

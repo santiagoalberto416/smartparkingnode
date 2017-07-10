@@ -1,0 +1,12 @@
+{
+ 	"blocks":[{
+        "day_amount": "320",
+        "month_amount": "520",
+        "id": 1
+    },
+    {
+        "day_amount": "320",
+        "month_amount": "520",
+        "id": 2
+    }]
+}
