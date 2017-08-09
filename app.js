@@ -40,6 +40,11 @@ io.on('connection', function(socket){
     io.emit('some event', { for: 'everyone' });
   });
   
+  socket.on('refreshTrend', function(){
+    io.emit('sendSignalRefesh', '');
+    
+  });
+  
   socket.on('onReceiveChange', function(msg){
     console.log('message: ' + msg);
     var response = JSON.parse(msg);
@@ -83,6 +88,7 @@ function insert(id, state) {
           
           con.query(update, function(err, result){
             if(err) throw err;
+            io.emit('refreshTrend', '');
             console.log('update succesful');
           });
           
