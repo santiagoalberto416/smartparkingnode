@@ -43,8 +43,9 @@ io.on('connection', function(socket){
   socket.on('onReceiveChange', function(msg){
     console.log('message: ' + msg);
     var response = JSON.parse(msg);
-    // insert(response.id, response.state);
+    insert(response.id, response.state);
     io.emit('sendChangeToDash', msg);
+    
   });
 });
 
@@ -61,8 +62,10 @@ function conect(){
 }
 
 function insert(id, state) {
+  console.log('Soy la función insert');
     if(connected){
           var numState = 0;
+          console.log('state: ' + state)
           if(state == "free"){
             numState = 1;
           } else if (state == "ocupated"){
@@ -70,10 +73,19 @@ function insert(id, state) {
           }else{
             return;
           }
-          var sql = "INSERT INTO `sensor_activities`(`id`, `sensor_id`, `state`, `created_at`, `updated_at`) VALUES (null,"+ id +",'"+ state +"',NOW(), NOW())";
+          var sql = "INSERT INTO `sensor_activities`(`id`, `sensor_id`, `state`, `created_at`, `updated_at`) VALUES (null,"+ id +",'"+ numState +"',NOW(), NOW())";
           con.query(sql, function (err, result) {
           if (err) throw err;
+          
           console.log("1 record inserted");
+          
+          var update = "update sensors set state ="+ numState + " where id = " +id;
+          
+          con.query(update, function(err, result){
+            if(err) throw err;
+            console.log('update succesful');
+          });
+          
         });
     }else{
         conect();

@@ -92,7 +92,7 @@
         function changeSpecificParkLot(idClear, state){
           map.data.forEach(function(feature){
             var id = feature.getProperty("id");
-            console.log(idClear + " " + id);
+            //console.log(idClear + " " + id);
             if(idClear == id){
               map.data.remove(feature);
               feature.setProperty("state", state)
