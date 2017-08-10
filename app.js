@@ -42,7 +42,7 @@ io.on('connection', function(socket){
   
   socket.on('refreshTrend', function(){
     io.emit('sendSignalRefesh', '');
-    
+    console.log('puto socket :v')
   });
   
   socket.on('onReceiveChange', function(msg){
