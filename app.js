@@ -18,8 +18,8 @@ var express = require('express'),
   conect();
 	
 	//server.listen(process.env.PORT, process.env.IP);
-	server.listen(8081, function(){
-	  console.log('listening on *:8081');
+	server.listen(8082, function(){
+	  console.log('listening on *:8082');
 	});
 	app.use(express.static('web'));
 
@@ -30,9 +30,9 @@ var express = require('express'),
 	
 	
 io.on('connection', function(socket){
-  console.log('a user connected');
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
+  console.log('a user connected with id ' + socket.id);
+  socket.on('disconnect', function(socket){
+    console.log('user disconnected' + socket.id);
   });
   
   socket.on('chat message', function(msg){
@@ -100,6 +100,10 @@ function insert(id, state) {
     
 }
 
+/// to restart service 
+/// install
+// sudo npm install -g pm2
+// pm2 start app.js --watch
 
 
 
