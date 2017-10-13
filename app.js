@@ -45,6 +45,16 @@ io.on('connection', function(socket){
     console.log('puto socket :v')
   });
   
+  socket.on('registerUser', function(user){
+    var response = JSON.parse(user);
+    var iduser = response.iduser;
+    var idspace = response.idspace;
+  });
+  
+  socket.on('notifySecurity', function(msg){
+    io.emit('sendDashboardSecurity', msg);
+  });
+  
   socket.on('onReceiveChange', function(msg){
     console.log('message: ' + msg);
     var response = JSON.parse(msg);
@@ -78,13 +88,13 @@ function insert(id, state) {
           }else{
             return;
           }
-          var sql = "INSERT INTO `sensor_activities`(`id`, `sensor_id`, `state`, `created_at`, `updated_at`) VALUES (null,"+ id +",'"+ numState +"',NOW(), NOW())";
+          var sql = "call sp_add_activity("+id+","+numState+","+1+")";
           con.query(sql, function (err, result) {
           if (err) throw err;
           
           console.log("1 record inserted");
           
-          var update = "update sensors set state ="+ numState + " where id = " +id;
+          var update = "call sp_add_activity("+id+","+numState+","+2+")";
           
           con.query(update, function(err, result){
             if(err) throw err;
