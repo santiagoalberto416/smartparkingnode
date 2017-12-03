@@ -15,9 +15,22 @@ var express = require('express'),
 
 var contactOnLine = []
 
-/// first is add a user
+// first is add a user
+// check if exist 
+// and return true if is corrected inserted
 function addUserToSecuritySystem(idUser, idPlace){
-    contactOnLine.push([idUser, idPlace])
+    var existUser = false;
+    for(var i = 0; i < contactOnLine.length;i++){
+  			var contactData = contactOnLine[i]
+  			if(contactData[0]==idUser){
+  			  existUser = true;
+  			}
+  	}
+  	if(existUser==false){
+  	  contactOnLine.push([idUser, idPlace])
+  	  console.log("user with id "+ idUser + " is address " + idPlace)
+  	}
+  	return existUser
 }
 
 // check if user exist on the array
@@ -83,12 +96,21 @@ io.on('connection', function(socket){
     var response = JSON.parse(user);
     var iduser = response.iduser;
     var idspace = response.idspace;
-		addUserToSecuritySystem(iduser, idspace)
-		console.log("user is loged with idspace of "+idspace)
+		if(addUserToSecuritySystem(iduser, idspace)){
+		  // emit that other user is using that spot
+		  io.emit('notifySpot'+iduser, "{\"state\": 0, \"description\": \"ocupated spot\"}");
+		  console.log("{\"state\": 0, \"description\": \"ocupated spot\"}")
+		}else{
+		  // emit that spot is free
+		  io.emit('notifySpot'+iduser, "{\"state\": 1, \"description\": \"free spot\"}");
+		  console.log("{\"state\": 1, \"description\": \"free spot\"}")
+		}
+		
   });
 
   socket.on('notifySecurity', function(msg){
     console.log(msg);
+    removeUser(msg.iduser)
     io.emit('sendDashboardSecurity', msg);
   });
 
@@ -102,6 +124,8 @@ io.on('connection', function(socket){
 		if(idOfUser!=0){
 			// se emite a el id del usuario o del dispositivo que se dio de alta
 		  io.emit("socketUser"+idOfUser, "user with id "+idOfUser+" has gone out");
+		  
+		  console.log("has gone out user "+idOfUser)
 		}
   });
 });
