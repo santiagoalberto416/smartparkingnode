@@ -51,7 +51,7 @@ function removeUser(idUser){
     var availablespaces = ""
     for(var i = 0; i < contactOnLine.length;i++){
 			var contactData = contactOnLine[i]
-			availablespaces = availablespaces + "IDUSER : " + contactData[0] + " , IDSPACE" + contactData[1] + "::::::\n" ;
+			availablespaces = availablespaces + "IDUSER : " + contactData[0] + " , IDSPACE" + contactData[1] + " , IDUSER GETTING OUT "+ idUser ;
 			if(contactData[0]==idUser){
 				contactOnLine.splice(i, 1);
 				availablespaces = availablespaces + "DELETED IDUSER : " + contactData[0] + " , IDSPACE" + contactData[1] ;
