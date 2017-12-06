@@ -114,7 +114,9 @@ io.on('connection', function(socket){
 
   socket.on('notifySecurity', function(msg){
     console.log(msg);
-    removeUser(msg.iduser)
+    var jsonObject = JSON.parse(msg)
+    var idUser = jsonObject.iduser
+    removeUser(idUser)
     io.emit('sendDashboardSecurity', msg);
   });
 
