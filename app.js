@@ -48,12 +48,16 @@ function checkIfUserIsOut(idPlace){
 // check if user exist on the array
 /// first is add a user
 function removeUser(idUser){
+    var availablespaces = ""
     for(var i = 0; i < contactOnLine.length;i++){
 			var contactData = contactOnLine[i]
+			availablespaces = availablespaces + "IDUSER : " + contactData[0] + " , IDSPACE" + contactData[1] + "::::::\n" ;
 			if(contactData[0]==idUser){
 				contactOnLine.splice(i, 1);
+				availablespaces = availablespaces + "DELETED IDUSER : " + contactData[0] + " , IDSPACE" + contactData[1] ;
 			}
 		}
+		console.log(availablespaces)
 		return false
 }
 
